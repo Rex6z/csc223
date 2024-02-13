@@ -7,7 +7,6 @@
 * Does not allow for random access of data, needs to be acccess sequentialy
 * Can add more values later
 * START marks the start and AVAIL marks open spaces
-* 
 
 Impliment
 struct node{
