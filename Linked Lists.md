@@ -8,8 +8,8 @@
 * Can add more values later
 * START marks the start and AVAIL marks open spaces
 
-Impliment
-struct node{
-    int data;
-    struct node *next;
+Impliment 
+struct node{  
+    int data;  
+    struct node *next;  
 }
