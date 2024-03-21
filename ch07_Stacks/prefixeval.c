@@ -10,10 +10,11 @@ int main(){
     printf("\n Enter the prefix expression: ");
     fgets(prefix,10,stdin);
     len = strlen(prefix);
-    for(i=len-1;i>=0;i--){
+    for(i=len-2;i>=0;i--){
         switch(get_type(prefix[i])){
             case 0:
                 val = prefix[i] - '0';
+                printf(" o:%d ", val);
                 push(val);
                 break;
             case 1:
@@ -33,6 +34,7 @@ int main(){
                         res = opr1 / opr2;
                         break;
                 }
+                printf(" r:%d ", res);
                 push(res);
         }
     }
