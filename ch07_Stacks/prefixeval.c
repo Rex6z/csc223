@@ -4,17 +4,15 @@ int stk[10];
 int top=-1;
 int pop();
 void push(int);
-int main(){
-    char prefix[10];
+int prefixeval(char prefix[10]){
+    top=-1;
+
     int len, val, i, opr1, opr2, res;
-    printf("\n Enter the prefix expression: ");
-    fgets(prefix,10,stdin);
     len = strlen(prefix);
-    for(i=len-2;i>=0;i--){
+    for(i=len-1;i>=0;i--){
         switch(get_type(prefix[i])){
             case 0:
                 val = prefix[i] - '0';
-                printf(" o:%d ", val);
                 push(val);
                 break;
             case 1:
@@ -34,13 +32,12 @@ int main(){
                         res = opr1 / opr2;
                         break;
                 }
-                printf(" r:%d ", res);
                 push(res);
         }
     }
-    printf("\n RESULT = %d", stk[0]);
-    getchar();
-    return 0;
+    //printf("\n RESULT = %d", stk[0]);
+    //getchar();
+    return stk[0];
 }
 void push(int val){
     stk[++top] = val;
@@ -52,4 +49,10 @@ int get_type(int c){
     if(c == '+' || c == '-' || c == '*' || c == '/')
         return 1;
     else return 0;
+}
+
+void main() {
+    printf("%d", prefixeval("+-927"));
+    printf("\n%d", prefixeval("*+238"));
+    printf("\n%d", prefixeval("+/826"));
 }
