@@ -58,6 +58,9 @@ def evaluate_expression_tree(node):
     elif node.value == '*':
         return left_value * right_value
     elif node.value == '/':
+        if (right_value == 0):
+            print("Error: division by 0")
+            exit()
         return left_value / right_value
 
 # Function to convert expression tree to Polish notation
