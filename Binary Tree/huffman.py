@@ -147,7 +147,7 @@ decompress(compressed_file, decompressed_file, huffman_codes)
 
 
 # Print the first few layers of the tree (printing the whole tree is unreadable)
-"""
+#"""
 from binarytree import Node
 
 def build_binary_tree(node, depth):
@@ -162,4 +162,4 @@ depth_limit = 5
 binary_tree = build_binary_tree(huffman_tree, depth_limit)
 print("Simplified Huffman Tree (depth limit={}):".format(depth_limit))
 print(binary_tree)
-"""
+#"""
